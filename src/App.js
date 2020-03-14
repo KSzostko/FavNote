@@ -1,9 +1,12 @@
 import React from 'react';
-import './App.css';
+import Button from './components/Button/Button';
 
 function App() {
     return (
-        <h1>Hello world!</h1>
+        <>
+            <h1>Hello world!</h1>
+            <Button>visit twitter page</Button>
+        </>
     );
 }
 
