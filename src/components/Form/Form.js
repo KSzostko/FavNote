@@ -8,21 +8,21 @@ const Form = () => (
         <button className={style.closeButton}></button>
         <Header>Add new favourite Twitter account</Header>
         <form className={style.form}>
-            <p>
+            <p className={style.form__inputWrapper}>
                 <label className={style.form__label} htmlFor="title">Twitter Name</label>
                 <input className={style.form__input} type="text" />
             </p>
-            <p>
+            <p className={style.form__inputWrapper}>
                 <label className={style.form__label} htmlFor="link">Twitter Link</label>
                 <input className={style.form__input} type="text" />
             </p>
-            <p>
+            <p className={style.form__inputWrapper}>
                 <label className={style.form__label} htmlFor="image">Image</label>
                 <input className={style.form__input} type="text" />
             </p>
-            <p>
+            <p className={style.form__inputWrapper}>
                 <label className={style.form__label} htmlFor="description">Description</label>
-                <textarea className={style.form__textarea} name="description"></textarea>
+                <textarea className={style.form__textarea} name="description" rows="10"></textarea>
             </p>
             <Button>add new item</Button>
         </form>
