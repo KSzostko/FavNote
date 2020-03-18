@@ -10,6 +10,36 @@
     box-shadow: 0 20px 40px -10px rgba(129, 129, 129, 0.5);
 }
 
+.closeButton {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 27px;
+    height: 27px;
+    border-style: none;
+    background-color: #1e58ff;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16px;
+        height: 2px;
+        background-color: #fff;
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
 .form {
     &__input {
         border-style: none;

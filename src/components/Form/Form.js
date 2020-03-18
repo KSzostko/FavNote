@@ -5,7 +5,7 @@ import style from './Form.module.scss';
 
 const Form = () => (
     <div className={style.wrapper}>
-        <Button className={style.closeButton}></Button>
+        <button className={style.closeButton}></button>
         <Header>Add new favourite Twitter account</Header>
         <form className={style.form}>
             <p>
