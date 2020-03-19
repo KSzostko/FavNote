@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../Header/Header';
+import Title from '../Title/Title';
 import Button from '../Button/Button';
 import style from './Form.module.scss';
 
 const Form = () => (
     <div className={style.wrapper}>
         <button className={style.closeButton}></button>
-        <Header>Add new favourite Twitter account</Header>
+        <Title>Add new favourite Twitter account</Title>
         <form className={style.form}>
             <p className={style.form__inputWrapper}>
                 <label className={style.form__label} htmlFor="title">Twitter Name</label>

@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Header.module.scss';
+import style from './Title.module.scss';
 
 const Header = ({ children }) => (
     <h1 className={style.header}>
