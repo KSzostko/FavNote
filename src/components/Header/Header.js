@@ -8,7 +8,7 @@ const Header = () => (
     <div className={style.wrapper}>
         <img src={logo} alt="Fav Note" />
         <HeaderNav />
-        <Button>new item</Button>
+        <Button secondary>new item</Button>
     </div>
 );
 

@@ -1,8 +1,21 @@
-.button {
+.primary,
+.secondary {
     padding: 7px 12px;
-    background-color: #FFF;
     border: 2px solid #1E58FF;
-    font-size: 1rem;
-    color: #1E58FF;
     cursor: pointer;
+}
+
+.primary {
+    background-color: #FFF;
+    color: #1E58FF;
+    font-size: 1rem;
+}
+
+.secondary {
+    width: 120px;
+    background-color: #1E58FF;
+    color: #FFF;
+    font-size: 1.3rem;
+    font-weight: 700;
+    box-shadow: 0 5px 20px -5px rgba(129, 129, 129, 0.9);
 }
