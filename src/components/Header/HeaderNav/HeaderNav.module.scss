@@ -1,0 +1,16 @@
+.list {
+    list-style: none;
+    padding: 0;
+    margin-left: 80px;
+
+    &__item {
+        display: inline-block;
+        margin-right: 50px;
+    }
+
+    &__link {
+        color: #818181;
+        text-decoration: none;
+        font-size: 1.4rem;
+    }
+}
