@@ -1,17 +1,37 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import style from './HeaderNav.module.scss';
 
 const HeaderNav = () => (
     <nav>
         <ul className={style.list}>
             <li className={style.list__item}>
-                <a className={style.list__link} href="/">twitters</a>
+                <NavLink
+                    exact
+                    to="/"
+                    className={style.list__link}
+                    activeClassName={style.list__linkActive}
+                >
+                    twitters
+                </NavLink>
             </li>
             <li className={style.list__item}>
-                <a className={style.list__link} href="/">articles</a>
+                <NavLink
+                    to="/articles"
+                    className={style.list__link}
+                    activeClassName={style.list__linkActive}
+                >
+                    articles
+                </NavLink>
             </li>
             <li className={style.list__item}>
-                <a className={style.list__link} href="/">notes</a>
+                <NavLink
+                    to="/notes"
+                    className={style.list__link}
+                    activeClassName={style.list__linkActive}
+                >
+                    notes
+                </NavLink>
             </li>
         </ul>
     </nav>
