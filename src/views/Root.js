@@ -34,7 +34,7 @@ class Root extends Component {
         return (
             <BrowserRouter>
                 <AppContext.Provider value={contextElements}>
-                    <Header click={this.openForm} />
+                    <Header />
                     <List />
                     {isFormVisible && <Form click={this.closeForm} />}
                     <Switch>
