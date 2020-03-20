@@ -12,12 +12,18 @@ class Root extends Component {
         isFormVisible: false,
     }
 
+    openForm = () => (
+        this.setState({
+            isFormVisible: true
+        })
+    );
+
     render() {
         const { isFormVisible } = this.state;
 
         return (
             <BrowserRouter>
-                <Header />
+                <Header click={this.openForm} />
                 <List />
                 {isFormVisible && <Form />}
                 <Switch>
