@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import AppContext from '../context';
 import NotesView from './NotesView';
 import ArticlesView from './ArticlesView';
 import TwittersView from './TwittersView';
@@ -18,19 +19,30 @@ class Root extends Component {
         })
     );
 
+    closeForm = () => (
+        this.setState({
+            isFormVisible: false
+        })
+    );
+
     render() {
         const { isFormVisible } = this.state;
+        const contextElements = {
+            openForm: this.openForm
+        }
 
         return (
             <BrowserRouter>
-                <Header click={this.openForm} />
-                <List />
-                {isFormVisible && <Form />}
-                <Switch>
-                    <Route exact path="/" component={TwittersView} />
-                    <Route path="/articles" component={ArticlesView} />
-                    <Route path="/notes" component={NotesView} />
-                </Switch>
+                <AppContext.Provider value={contextElements}>
+                    <Header click={this.openForm} />
+                    <List />
+                    {isFormVisible && <Form />}
+                    <Switch>
+                        <Route exact path="/" component={TwittersView} />
+                        <Route path="/articles" component={ArticlesView} />
+                        <Route path="/notes" component={NotesView} />
+                    </Switch>
+                </AppContext.Provider>
             </BrowserRouter>
         );
     }
