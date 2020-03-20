@@ -23,10 +23,11 @@ class Form extends Component {
 
     render() {
         const { checked } = this.state;
+        const { click } = this.props;
 
         return (
             <div className={style.wrapper}>
-                <button className={style.closeButton}></button>
+                <button onClick={click} className={style.closeButton}></button>
                 <Title>Add new favourite Twitter account</Title>
                 <form className={style.form}>
                     <div className={style.form__radioWrapper}>

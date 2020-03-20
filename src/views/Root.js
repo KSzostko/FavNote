@@ -36,7 +36,7 @@ class Root extends Component {
                 <AppContext.Provider value={contextElements}>
                     <Header click={this.openForm} />
                     <List />
-                    {isFormVisible && <Form />}
+                    {isFormVisible && <Form click={this.closeForm} />}
                     <Switch>
                         <Route exact path="/" component={TwittersView} />
                         <Route path="/articles" component={ArticlesView} />
