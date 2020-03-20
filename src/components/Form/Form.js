@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from '../Title/Title';
 import Button from '../Button/Button';
+import FormRadio from './FormRadio/FormRadio';
 import style from './Form.module.scss';
 
 const Form = () => (
@@ -8,6 +9,11 @@ const Form = () => (
         <button className={style.closeButton}></button>
         <Title>Add new favourite Twitter account</Title>
         <form className={style.form}>
+            <div className={style.form__radioWrapper}>
+                <FormRadio>Twitter</FormRadio>
+                <FormRadio>Article</FormRadio>
+                <FormRadio>Note</FormRadio>
+            </div>
             <p className={style.form__inputWrapper}>
                 <label className={style.form__label} htmlFor="title">Twitter Name</label>
                 <input className={style.form__input} type="text" />
