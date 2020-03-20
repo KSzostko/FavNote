@@ -53,17 +53,26 @@ class Form extends Component {
                         </FormRadio>
                     </div>
                     <p className={style.form__inputWrapper}>
-                        <label className={style.form__label} htmlFor="title">Twitter Name</label>
+                        <label className={style.form__label} htmlFor="title">
+                            {checked === types.twitter ? 'Twitter Name' : 'Title'}
+                        </label>
                         <input className={style.form__input} type="text" />
                     </p>
-                    <p className={style.form__inputWrapper}>
-                        <label className={style.form__label} htmlFor="link">Twitter Link</label>
-                        <input className={style.form__input} type="text" />
-                    </p>
-                    <p className={style.form__inputWrapper}>
-                        <label className={style.form__label} htmlFor="image">Image</label>
-                        <input className={style.form__input} type="text" />
-                    </p>
+                    {checked !== types.note
+                        && (
+                            <p className={style.form__inputWrapper}>
+                                <label className={style.form__label} htmlFor="link">
+                                    {checked === types.twitter ? 'Twitter Link' : 'Link'}
+                                </label>
+                                <input className={style.form__input} type="text" />
+                            </p>
+                        )}
+                    {checked === types.twitter && (
+                        <p className={style.form__inputWrapper}>
+                            <label className={style.form__label} htmlFor="image">Image</label>
+                            <input className={style.form__input} type="text" />
+                        </p>
+                    )}
                     <p className={style.form__inputWrapper}>
                         <label className={style.form__label} htmlFor="description">Description</label>
                         <textarea className={style.form__textarea} name="description" rows="10"></textarea>
