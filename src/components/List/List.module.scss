@@ -2,3 +2,10 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.noItems {
+    flex-basis: 100%;
+    color: darkgrey;
+    font-size: 2rem;
+    text-align: center;
+}

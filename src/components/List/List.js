@@ -8,7 +8,8 @@ const List = ({ type }) => (
         {(context) => {
             return (
                 <ul className={style.list}>
-                    {console.log(context)}
+                    {context[type].length === 0
+                        && <h1 className={style.noItems}>There's nothing yet here, please add some items!</h1>}
                     {context[type].map(({ title, link, image, description }) => (
                         <ListItem
                             name={title}
