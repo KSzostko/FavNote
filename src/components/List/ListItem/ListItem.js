@@ -13,7 +13,8 @@ const ListItem = ({ type, name, imageUrl, description, href }) => (
         <div className={style.content}>
             <Title>{name}</Title>
             <p className={style.content__description}>{description}</p>
-            <Button href={href}>visit twitter page</Button>
+            {type !== "note"
+                && <Button href={href}>visit{type === "twitter" ? " twitter" : ""} page</Button>}
         </div>
     </li>
 );
