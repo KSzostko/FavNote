@@ -4,9 +4,11 @@ import Title from '../../Title/Title';
 import Button from '../../Button/Button';
 import style from './ListItem.module.scss';
 
+const genericPhoto = 'https://idisl.info/wp-content/uploads/2015/07/generic-avatar.png';
+
 const ListItem = ({ name, imageUrl, description, href }) => (
     <li className={style.wrapper}>
-        <img className={style.image} src={imageUrl} alt="Dan Abramov" />
+        <img className={style.image} src={imageUrl === '' ? genericPhoto : imageUrl} alt="Dan Abramov" />
         <div className={style.content}>
             <Title>{name}</Title>
             <p className={style.content__description}>{description}</p>
