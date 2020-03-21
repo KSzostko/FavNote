@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Title from '../Title/Title';
 import Button from '../Button/Button';
 import FormRadio from './FormRadio/FormRadio';
@@ -84,5 +85,9 @@ class Form extends Component {
         );
     }
 }
+
+Form.propTypes = {
+    click: PropTypes.func.isRequired,
+};
 
 export default Form;

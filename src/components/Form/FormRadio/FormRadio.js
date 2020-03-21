@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import style from './FormRadio.module.scss';
 
 const FormRadio = ({ id, children, checked, change }) => (
@@ -14,5 +15,12 @@ const FormRadio = ({ id, children, checked, change }) => (
         {children}
     </label>
 );
+
+FormRadio.propTypes = {
+    id: PropTypes.string.isRequired,
+    children: PropTypes.string.isRequired,
+    checked: PropTypes.bool.isRequired,
+    change: PropTypes.func.isRequired,
+};
 
 export default FormRadio;
