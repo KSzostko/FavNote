@@ -13,43 +13,63 @@ const types = {
 
 class Form extends Component {
     state = {
-        checked: types.twitter
+        checked: types.twitter,
+        title: '',
+        link: '',
+        image: '',
+        description: '',
     }
 
-    handleChange = (e) => {
+    handleRadioChange = (e) => {
         this.setState({
-            checked: e.target.id
+            checked: e.target.id,
+            title: '',
+            link: '',
+            image: '',
+            description: '',
         });
     }
 
+    handleInputChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    addItem = (e) => {
+        e.preventDefault();
+
+        console.log(e.target);
+    }
+
     render() {
-        const { checked } = this.state;
+        const { checked, title, link, image, description } = this.state;
         const { click } = this.props;
 
         return (
             <div className={style.wrapper}>
                 <button onClick={click} className={style.closeButton}></button>
                 <Title>Add new favourite Twitter account</Title>
-                <form className={style.form}>
+                <form onSubmit={this.addItem} className={style.form}>
                     <div className={style.form__radioWrapper}>
                         <FormRadio
                             id={types.twitter}
                             checked={checked === types.twitter}
-                            change={this.handleChange}
+                            change={this.handleRadioChange}
                         >
                             Twitter
                         </FormRadio>
                         <FormRadio
                             id={types.article}
                             checked={checked === types.article}
-                            change={this.handleChange}
+                            change={this.handleRadioChange}
                         >
                             Article
                         </FormRadio>
                         <FormRadio
                             id={types.note}
                             checked={checked === types.note}
-                            change={this.handleChange}
+                            change={this.handleRadioChange}
                         >
                             Note
                         </FormRadio>
@@ -58,7 +78,13 @@ class Form extends Component {
                         <label className={style.form__label} htmlFor="title">
                             {checked === types.twitter ? 'Twitter Name' : 'Title'}
                         </label>
-                        <input className={style.form__input} type="text" />
+                        <input
+                            name="title"
+                            value={title}
+                            onChange={this.handleInputChange}
+                            className={style.form__input}
+                            type="text"
+                        />
                     </p>
                     {checked !== types.note
                         && (
@@ -66,18 +92,36 @@ class Form extends Component {
                                 <label className={style.form__label} htmlFor="link">
                                     {checked === types.twitter ? 'Twitter Link' : 'Link'}
                                 </label>
-                                <input className={style.form__input} type="text" />
+                                <input
+                                    name="link"
+                                    value={link}
+                                    onChange={this.handleInputChange}
+                                    className={style.form__input}
+                                    type="text"
+                                />
                             </p>
                         )}
                     {checked === types.twitter && (
                         <p className={style.form__inputWrapper}>
                             <label className={style.form__label} htmlFor="image">Image</label>
-                            <input className={style.form__input} type="text" />
+                            <input
+                                name="image"
+                                value={image}
+                                onChange={this.handleInputChange}
+                                className={style.form__input}
+                                type="text"
+                            />
                         </p>
                     )}
                     <p className={style.form__inputWrapper}>
                         <label className={style.form__label} htmlFor="description">Description</label>
-                        <textarea className={style.form__textarea} name="description" rows="10"></textarea>
+                        <textarea
+                            name="description"
+                            value={description}
+                            onChange={this.handleInputChange}
+                            className={style.form__textarea}
+                            rows="10"
+                        ></textarea>
                     </p>
                     <Button>add new item</Button>
                 </form>
