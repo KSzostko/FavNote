@@ -1,7 +1,8 @@
 import React from 'react';
+import List from '../components/List/List';
 
 const NotesView = () => (
-    <h1>This is notes view</h1>
+    <List type="note" />
 );
 
 export default NotesView;

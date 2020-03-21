@@ -1,7 +1,8 @@
 import React from 'react';
+import List from '../components/List/List';
 
 const TwittersView = () => (
-    <h1>This is twitters view</h1>
+    <List type="twitter" />
 );
 
 export default TwittersView;

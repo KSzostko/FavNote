@@ -1,7 +1,8 @@
 import React from 'react';
+import List from '../components/List/List';
 
 const ArticlesView = () => (
-    <h1>This is articles view</h1>
+    <List type="article" />
 );
 
 export default ArticlesView;

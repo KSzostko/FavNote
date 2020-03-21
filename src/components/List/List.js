@@ -1,50 +1,28 @@
 import React from 'react';
+import AppContext from '../../context';
 import ListItem from './ListItem/ListItem';
 import style from './List.module.scss';
 
-const tempData = [
-    {
-        id: 1,
-        name: 'Dan Abramov',
-        twitterLink: 'https://twitter.com/dan_abramov',
-        description: 'One of the React creators',
-        imageUrl: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
-    },
-    {
-        id: 2,
-        name: 'Dan Abramov',
-        twitterLink: 'https://twitter.com/dan_abramov',
-        description: 'One of the React creators',
-        imageUrl: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
-    },
-    {
-        id: 3,
-        name: 'Dan Abramov',
-        twitterLink: 'https://twitter.com/dan_abramov',
-        description: 'One of the React creators',
-        imageUrl: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
-    },
-    {
-        id: 4,
-        name: 'Dan Abramov',
-        twitterLink: 'https://twitter.com/dan_abramov',
-        description: 'One of the React creators',
-        imageUrl: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
-    },
-]
+const List = ({ type }) => (
+    <AppContext.Consumer>
+        {(context) => {
+            return (
+                <ul className={style.list}>
+                    {console.log(context)}
+                    {context[type].map(({ title, link, image, description }) => (
+                        <ListItem
+                            name={title}
+                            href={link}
+                            imageUrl={image}
+                            description={description}
+                            key={title}
+                        />
+                    ))}
+                </ul>
+            );
 
-const List = () => (
-    <ul className={style.list}>
-        {tempData.map(({ id, name, twitterLink, description, imageUrl }) => (
-            <ListItem
-                name={name}
-                href={twitterLink}
-                imageUrl={imageUrl}
-                description={description}
-                key={id}
-            />
-        ))}
-    </ul>
+        }}
+    </AppContext.Consumer>
 );
 
-export default List
+export default List;

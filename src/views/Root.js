@@ -4,14 +4,38 @@ import AppContext from '../context';
 import NotesView from './NotesView';
 import ArticlesView from './ArticlesView';
 import TwittersView from './TwittersView';
-import List from '../components/List/List';
 import Form from '../components/Form/Form';
 import Header from '../components/Header/Header';
 
 class Root extends Component {
     state = {
         isFormVisible: false,
-        twitter: [],
+        twitter: [
+            {
+                title: 'Dan Abramov',
+                link: 'https://twitter.com/dan_abramov',
+                image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
+                description: 'One of the React creators',
+            },
+            {
+                title: 'Dan Abramov',
+                link: 'https://twitter.com/dan_abramov',
+                image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
+                description: 'One of the React creators',
+            },
+            {
+                title: 'Dan Abramov',
+                link: 'https://twitter.com/dan_abramov',
+                image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
+                description: 'One of the React creators',
+            },
+            {
+                title: 'Dan Abramov',
+                link: 'https://twitter.com/dan_abramov',
+                image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
+                description: 'One of the React creators',
+            },
+        ],
         article: [],
         note: []
     }
@@ -43,16 +67,18 @@ class Root extends Component {
     }
 
     render() {
-        const { isFormVisible } = this.state;
+        const { isFormVisible, twitter, article, note } = this.state;
         const contextElements = {
-            openForm: this.openForm
-        }
+            openForm: this.openForm,
+            twitter,
+            article,
+            note,
+        };
 
         return (
             <BrowserRouter>
                 <AppContext.Provider value={contextElements}>
                     <Header />
-                    <List />
                     {isFormVisible && <Form addItemFn={this.addItem} click={this.closeForm} />}
                     <Switch>
                         <Route exact path="/" component={TwittersView} />
