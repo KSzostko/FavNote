@@ -36,21 +36,15 @@ class Form extends Component {
         });
     }
 
-    addItem = (e) => {
-        e.preventDefault();
-
-        console.log(e.target);
-    }
-
     render() {
         const { checked, title, link, image, description } = this.state;
-        const { click } = this.props;
+        const { click, addItemFn } = this.props;
 
         return (
             <div className={style.wrapper}>
                 <button onClick={click} className={style.closeButton}></button>
                 <Title>Add new favourite Twitter account</Title>
-                <form onSubmit={this.addItem} className={style.form}>
+                <form onSubmit={(e) => addItemFn(e, this.state)} className={style.form}>
                     <div className={style.form__radioWrapper}>
                         <FormRadio
                             id={types.twitter}

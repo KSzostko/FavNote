@@ -11,6 +11,9 @@ import Header from '../components/Header/Header';
 class Root extends Component {
     state = {
         isFormVisible: false,
+        twitter: [],
+        article: [],
+        note: []
     }
 
     openForm = () => (
@@ -25,6 +28,20 @@ class Root extends Component {
         })
     );
 
+    addItem = (e, newItem) => {
+        e.preventDefault();
+        console.log(newItem.checked);
+
+        this.setState(prevState => ({
+            [newItem.checked]: [
+                ...prevState[newItem.checked],
+                newItem,
+            ]
+        }));
+
+        this.closeForm();
+    }
+
     render() {
         const { isFormVisible } = this.state;
         const contextElements = {
@@ -36,7 +53,7 @@ class Root extends Component {
                 <AppContext.Provider value={contextElements}>
                     <Header />
                     <List />
-                    {isFormVisible && <Form click={this.closeForm} />}
+                    {isFormVisible && <Form addItemFn={this.addItem} click={this.closeForm} />}
                     <Switch>
                         <Route exact path="/" component={TwittersView} />
                         <Route path="/articles" component={ArticlesView} />
