@@ -76,14 +76,14 @@ class Root extends Component {
         };
 
         return (
-            <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <BrowserRouter>
                 <AppContext.Provider value={contextElements}>
                     <Header />
                     {isFormVisible && <Form addItemFn={this.addItem} click={this.closeForm} />}
                     <Switch>
-                        <Route exact path="/" component={TwittersView} />
-                        <Route path="/articles" component={ArticlesView} />
-                        <Route path="/notes" component={NotesView} />
+                        <Route exact path={process.env.PUBLIC_URL + "/"} component={TwittersView} />
+                        <Route path={process.env.PUBLIC_URL + "/articles"} component={ArticlesView} />
+                        <Route path={process.env.PUBLIC_URL + "/notes"} component={NotesView} />
                     </Switch>
                 </AppContext.Provider>
             </BrowserRouter>
