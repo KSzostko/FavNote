@@ -76,7 +76,7 @@ class Root extends Component {
         };
 
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <AppContext.Provider value={contextElements}>
                     <Header />
                     {isFormVisible && <Form addItemFn={this.addItem} click={this.closeForm} />}
