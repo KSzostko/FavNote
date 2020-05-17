@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "718d0b5424653b83ac654fb2836f8771",
+    "revision": "38f786d5e85f19f942fce88d85dd0080",
     "url": "/FavNote/index.html"
   },
   {
-    "revision": "65298f838ae3a8a81e5b",
+    "revision": "525ee3ff1b9fad1727d9",
     "url": "/FavNote/static/css/main.94e8700c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FavNote/static/js/2.dda47692.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "65298f838ae3a8a81e5b",
-    "url": "/FavNote/static/js/main.9e20b216.chunk.js"
+    "revision": "525ee3ff1b9fad1727d9",
+    "url": "/FavNote/static/js/main.a3192cb1.chunk.js"
   },
   {
     "revision": "24ee66fe7333d247a2bf",
