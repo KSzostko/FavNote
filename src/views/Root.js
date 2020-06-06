@@ -10,32 +10,7 @@ import Header from '../components/Header/Header';
 class Root extends Component {
     state = {
         isFormVisible: false,
-        twitter: [
-            {
-                title: 'Dan Abramov',
-                link: 'https://twitter.com/dan_abramov',
-                image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
-                description: 'One of the React creators',
-            },
-            {
-                title: 'Dan Abramov',
-                link: 'https://twitter.com/dan_abramov',
-                image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
-                description: 'One of the React creators',
-            },
-            {
-                title: 'Dan Abramov',
-                link: 'https://twitter.com/dan_abramov',
-                image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
-                description: 'One of the React creators',
-            },
-            {
-                title: 'Dan Abramov',
-                link: 'https://twitter.com/dan_abramov',
-                image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
-                description: 'One of the React creators',
-            },
-        ],
+        twitter: [],
         article: [],
         note: []
     }
